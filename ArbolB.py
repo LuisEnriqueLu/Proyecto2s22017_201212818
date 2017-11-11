@@ -301,7 +301,7 @@ class ArbolB:
 	def Eliminar(self, idEliminar):
 		self.InsertarNodosLista(self.inicio)
 		raizLista = claseListaB.retornarLista()
-		self.inicio = Pagina()
+		self.inicio = Pagina(ramas=[None,None,None,None,None], claves=[None,None,None,None], cuentas=0)
 
 		while raizLista != None:
 			if raizLista.index != None and raizLista.nodoArbolB.idNombre != idEliminar:
@@ -309,14 +309,14 @@ class ArbolB:
 			raizLista = raizLista.siguiente		
 
 		claseListaB.Limpiar()
-		return self.inicio
+		return "Elimino"
 	
 	
 	#Modificar
 	def Modificar(self, idModificar, idNuevo):
 		self.InsertarNodosLista(self.inicio)
 		raizLista = claseListaB.retornarLista()
-		self.inicio = Pagina()
+		self.inicio = Pagina(ramas=[None,None,None,None,None], claves=[None,None,None,None], cuentas=0)
 
 		while raizLista != None:
 			if raizLista.index != None :
@@ -326,7 +326,7 @@ class ArbolB:
 			raizLista = raizLista.siguiente		
 
 		claseListaB.Limpiar()
-		return self.inicio	
+		return "Valor Modificados"	
 		
 	
 	#INSERTAR NODOS EN LISTA

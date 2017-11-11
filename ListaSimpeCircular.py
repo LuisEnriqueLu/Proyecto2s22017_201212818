@@ -3,7 +3,8 @@ from NodoLSC import NodoLSC
 class ListaSimpleCircular:
 	def __init__(self):
 		self.primero = None
-		self.ultimo = None				
+		self.ultimo = None
+		self.cont = 0
 	
 	#INSERTAR AL INICIO
 	def InsertarInicio(self, idHabitacion, nivel, numero, reservada):
@@ -17,6 +18,34 @@ class ListaSimpleCircular:
 		self.primero.anterior = self.ultimo
 		self.ultimo.siguiente = self.primero
 		return "Dato Insertado"
+	
+	#ELIMINAR
+	def Eliminar(self, codigo):
+		if self.primero != None:
+			temp = self.primero
+			if temp.IdHabitaciones == codigo:
+				if temp.siguiente == self.primero:
+					self.primero = None
+					self.cont = self.cont - 1
+					return "Habitacion eliminada con exito!"
+	
+			if temp.siguiente != None:
+				if self.primero.IdHabitaciones == codigo:
+					self.primero = temp.siguiente
+					self.cont = self.cont - 1
+					return "Habitacion eliminada con exito!!"
+	
+			while True:
+				temp2 = temp.siguiente
+				if temp2.IdHabitaciones == codigo:
+					temp.siguiente = temp2.siguiente
+					self.cont = self.cont - 1
+					return "Habitacion eliminada con exito!!!"
+				else:
+					temp = temp.siguiente
+				if temp2 == self.primero:
+					break
+			return "Habitacion no encontrada"	
 		
 	
 	#INSERTAR AL FINAL

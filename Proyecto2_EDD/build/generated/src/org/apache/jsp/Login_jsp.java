@@ -59,9 +59,9 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"container-fluid\">\n");
       out.write("                <ul class=\"nav navbar-nav navbar-right\" style=\"padding-top: 18px; padding-right: 10px\">\n");
       out.write("                    <form action=\"CargarArchivos.jsp\">\n");
-      out.write("                        <img src=\"img/archivo.png\" width=\"30\" height=\"35\" style=\"padding-bottom:6px\"><input type=\"submit\" style=\"color: aliceblue; background-color: transparent; font-size: 20px; font-weight:400; border:transparent;\" value=\"CARGAR ARCHIVOS\">                        \n");
-      out.write("                        <a href=\"CrearModEliminar.jsp\"><button style=\"color: white; background-color: transparent; font-size: 20px; border:transparent; font-weight:400;\"><img src=\"img/archivo.png\" width=\"30\" height=\"35\" style=\"padding-bottom:6px\"> Crear - Modificar - Eliminar </button></a>\n");
+      out.write("                        <img src=\"img/archivo.png\" width=\"30\" height=\"35\" style=\"padding-bottom:6px\"><input type=\"submit\" style=\"color: aliceblue; background-color: transparent; font-size: 20px; font-weight:400; border:transparent;\" value=\"CARGAR ARCHIVOS\">                                                \n");
       out.write("                    </form>\n");
+      out.write("                    <a href=\"CrearModEliminar.jsp\"><img src=\"img/archivo.png\" width=\"30\" height=\"35\" style=\"padding-bottom:6px\"><input type=\"submit\" style=\"color: aliceblue; background-color: transparent; font-size: 20px; font-weight:400; border:transparent;\" value=\"CREAR - MODIFICAR - ELIMINAR\"></a>\n");
       out.write("                </ul>\n");
       out.write("            </div>            \n");
       out.write("        </nav> \n");
@@ -86,7 +86,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                            <input type=\"text\" name=\"usuario\" tabindex=\"1\" class=\"form-control\" placeholder=\"Nombre de Usuario\" required=\"\" style=\"font-weight:400;\">\n");
       out.write("                                        </div>\n");
       out.write("                                        <div class=\"form-group\">\n");
-      out.write("                                            <input type=\"password\" name=\"contrasena\" tabindex=\"2\" class=\"form-control\" placeholder=\"Contraseña\" required=\"\" style=\"font-weight:400;\">\n");
+      out.write("                                            <input type=\"password\" name=\"contrasena\" tabindex=\"2\" class=\"form-control\" placeholder=\"Contraseña\" required=\"\" pattern=\".{4,15}\" style=\"font-weight:400;\">\n");
       out.write("                                        </div>                                        \n");
       out.write("                                        <div class=\"col-xs-6 form-group pull-right\">     \n");
       out.write("                                            <input type=\"submit\" name=\"btnLogin\" tabindex=\"6\" class=\"form-control btn btn-login\" value=\"Iniciar Sesión\">\n");

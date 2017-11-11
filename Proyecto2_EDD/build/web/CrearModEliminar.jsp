@@ -83,7 +83,10 @@
                                     <input name="nombreUsuario" class="form-control" placeholder="NOMBRE">
                                 </div>
                                 <div class="col-sm-6" style="padding: 5px">
-                                    <input name="contraseña" class="form-control" placeholder="Nueva Contraseña">
+                                    <input name="nombreNuevo" class="form-control" placeholder="NUEVO NOMBRE">
+                                </div>
+                                <div class="col-sm-6" style="padding: 5px">
+                                    <input name="contrasena" class="form-control" placeholder="Nueva Contraseña">
                                 </div>
                                 <div class="col-sm-6" style="padding: 5px">
                                     <input name="edad" class="form-control" placeholder="Nueva Edad">
@@ -91,7 +94,7 @@
                                 <div class="col-sm-6" style="padding: 5px">
                                     <input name="telefono" class="form-control" placeholder="Nuevo Telefono">
                                 </div>
-                                <div style="padding: 5px">
+                                <div class="col-sm-6" style="padding: 5px">
                                     <input name="direccion" class="form-control" placeholder="Nueva Direccion">
                                 </div>
                                 <div style="padding: 5px">

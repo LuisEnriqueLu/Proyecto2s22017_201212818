@@ -13,7 +13,17 @@ public class modificarUsuarios extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String nombreUsuario = request.getParameter("nombreUsuario");
+            String nombreNuevo = request.getParameter("nombreNuevo");
+            String contrasena = request.getParameter("contrasena");
+            String edad = request.getParameter("edad");
+            String telefono = request.getParameter("telefono");
+            String direccion = request.getParameter("direccion");
             
+            conexionPython conectar = new conexionPython();
+            String respuesta = conectar.ModificarUsuario(nombreUsuario, nombreNuevo, contrasena, edad, telefono, direccion);                
+            
+            response.setStatus(HttpServletResponse.SC_RESET_CONTENT);
         }
     }
 

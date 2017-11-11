@@ -50,6 +50,57 @@ class ListaDoble:
 				
 	
 	#BUSCAR DATO
+	def ModificarNombre(self, usuario, nuevoDato):
+		aux = self.primero
+		while aux != None:
+			if aux.NombreUsuario == usuario:
+				aux.NombreUsuario = nuevoDato
+				return "True"
+			else:
+				aux = aux.siguiente
+	
+	#BUSCAR DATO
+	def ModificarContrasena(self, usuario, nuevoDato):
+		aux = self.primero
+		while aux != None:
+			if aux.NombreUsuario == usuario:
+				aux.Contrasena = nuevoDato
+				return "True"
+			else:
+				aux = aux.siguiente
+	
+	#BUSCAR DATO
+	def ModificarDireccion(self, usuario, nuevoDato):
+		aux = self.primero
+		while aux != None:
+			if aux.NombreUsuario == usuario:
+				aux.Direccion = nuevoDato
+				return "True"
+			else:
+				aux = aux.siguiente
+	
+	#BUSCAR DATO
+	def ModificarEdad(self, usuario, nuevoDato):
+		aux = self.primero
+		while aux != None:
+			if aux.NombreUsuario == usuario:
+				aux.Edad = nuevoDato
+				return "True"
+			else:
+				aux = aux.siguiente
+	
+	#BUSCAR DATO
+	def ModificarTelefono(self, usuario, nuevoDato):
+		aux = self.primero
+		while aux != None:
+			if aux.NombreUsuario == usuario:
+				aux.Telefono = nuevoDato
+				return "True"
+			else:
+				aux = aux.siguiente	
+				
+	
+	#BUSCAR DATO
 	def retornarID(self, usuario):
 		aux = self.primero
 		while aux != None:

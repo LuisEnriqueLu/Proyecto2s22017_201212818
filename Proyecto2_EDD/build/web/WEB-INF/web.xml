@@ -56,6 +56,22 @@
         <servlet-name>modificarUsuarios</servlet-name>
         <servlet-class>procesos.modificarUsuarios</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>procesos.NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarHabitaciones</servlet-name>
+        <servlet-class>procesos.eliminarHabitaciones</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>modificarB</servlet-name>
+        <servlet-class>procesos.modificarB</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>eliminarB</servlet-name>
+        <servlet-class>procesos.eliminarB</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>controllerLogin</servlet-name>
         <url-pattern>/controllerLogin</url-pattern>
@@ -111,6 +127,22 @@
     <servlet-mapping>
         <servlet-name>modificarUsuarios</servlet-name>
         <url-pattern>/modificarUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarHabitaciones</servlet-name>
+        <url-pattern>/eliminarHabitaciones</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>modificarB</servlet-name>
+        <url-pattern>/modificarB</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>eliminarB</servlet-name>
+        <url-pattern>/eliminarB</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

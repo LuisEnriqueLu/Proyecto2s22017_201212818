@@ -124,6 +124,48 @@ public class conexionPython {
         return respuesta;
     }
     
+    /******************MODIFICAR USUARIO***********************/
+    public String ModificarUsuario(String nombreUsuario, String nombreNuevo, String contrasena, String edad, String telefono, String direccion){
+        RequestBody cuerpoDatos = new FormEncodingBuilder()
+                .add("nombreUsuario", nombreUsuario)
+                .add("nombreNuevo", nombreNuevo)
+                .add("contrasena", contrasena)
+                .add("edad", edad)
+                .add("telefono", telefono)
+                .add("direccion", direccion)
+                .build();
+        String respuesta = ConexionPython(cuerpoDatos, "ModificarUsuario");
+        return respuesta;
+    }
+    
+    /******************ELIMINAR HABITACIONES***********************/
+    public String EliminarHabitaciones(String idHabitacion){
+        RequestBody cuerpoDatos = new FormEncodingBuilder()
+                .add("idHabitacion", idHabitacion)                                             
+                .build();
+        String respuesta = ConexionPython(cuerpoDatos, "eliminarHabitacion");
+        return respuesta;
+    }
+    
+    /******************MODIFICAR B***********************/
+    public String ModificarB(String idanterior, String idnuevo){
+        RequestBody cuerpoDatos = new FormEncodingBuilder()
+                .add("idanterior", idanterior)
+                .add("idnuevo", idnuevo)                                             
+                .build();
+        String respuesta = ConexionPython(cuerpoDatos, "ModificarB");
+        return respuesta;
+    }
+    
+     /******************ELIMINAR B***********************/
+    public String EliminarB(String idB){
+        RequestBody cuerpoDatos = new FormEncodingBuilder()
+                .add("idB", idB)                                                             
+                .build();
+        String respuesta = ConexionPython(cuerpoDatos, "EliminarB");
+        return respuesta;
+    }
+    
     
     /******************CONECTAR CON PYTHON*******************/
     public static String ConexionPython(RequestBody cuerpoDatos, String NombreMetodo) 

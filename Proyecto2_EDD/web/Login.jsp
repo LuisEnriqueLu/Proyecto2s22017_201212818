@@ -42,7 +42,7 @@
                                             <input type="text" name="usuario" tabindex="1" class="form-control" placeholder="Nombre de Usuario" required="" style="font-weight:400;">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="contrasena" tabindex="2" class="form-control" placeholder="Contraseña" required="" style="font-weight:400;">
+                                            <input type="password" name="contrasena" tabindex="2" class="form-control" placeholder="Contraseña" required="" pattern=".{4,15}" style="font-weight:400;">
                                         </div>                                        
                                         <div class="col-xs-6 form-group pull-right">     
                                             <input type="submit" name="btnLogin" tabindex="6" class="form-control btn btn-login" value="Iniciar Sesión">

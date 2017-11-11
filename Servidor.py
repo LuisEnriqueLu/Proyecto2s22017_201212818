@@ -235,6 +235,65 @@ class Servidor():
 			return respuesta
 		except: 
 			return "Error en el Servidor"	
+	
+	
+	#------------------------- MODIFICAR USUARIO ----------------------------#
+	@app.route('/ModificarUsuario',methods=['POST']) 
+	def ModificarUsuario():
+		try:
+			nombreUsuario = str(request.form['nombreUsuario'])
+			nombreNuevo = str(request.form['nombreNuevo'])
+			contrasena = str(request.form['contrasena'])
+			edad = str(request.form['edad'])
+			telefono = str(request.form['telefono'])
+			direccion = str(request.form['direccion'])
+		
+			if nombreNuevo != "":
+				respuesta = claseListaDoble.ModificarNombre(nombreUsuario, nombreNuevo)
+			if contrasena != "":
+				respuesta = claseListaDoble.ModificarContrasena(nombreUsuario, contrasena)
+			if edad != "":
+				respuesta = claseListaDoble.ModificarEdad(nombreUsuario, edad)
+			if telefono != "":
+				respuesta = claseListaDoble.ModificarTelefono(nombreUsuario, telefono)
+			if direccion != "":
+				respuesta = claseListaDoble.ModificarDireccion(nombreUsuario, direccion)
+			return respuesta			
+		except: 
+			return "Error en el Servidor"
+		
+	
+	#------------------------- ELIMINAR HABITACIONES ----------------------------#
+	@app.route('/eliminarHabitacion',methods=['POST']) 
+	def eliminarHabitacion():
+		try:
+			idHabitacion = str(request.form['idHabitacion'])
+			respuesta = claseListaSimple.Eliminar(idHabitacion)
+			return respuesta
+		except: 
+			return "Error en el Servidor"
+		
+		
+	#------------------------- MODIFICAR B----------------------------#
+	@app.route('/ModificarB',methods=['POST']) 
+	def ModificarB():
+		idanterior = str(request.form['idanterior'])
+		idnuevo = str(request.form['idnuevo'])
+		respuesta = claseArbolB.Modificar(idanterior, idnuevo)
+		return respuesta
+		#except: 
+		#	return "Error en el Servidor"
+	
+	
+	#------------------------- ELIMINAR B----------------------------#
+	@app.route('/EliminarB',methods=['POST']) 
+	def EliminarB():
+		try:
+			idB = str(request.form['idB'])			
+			respuesta = claseArbolB.Eliminar(int(idB))
+			return respuesta
+		except: 
+			return "Error en el Servidor"	
 		
 	
 	#-------------------------- FIN -------------------------------------#
