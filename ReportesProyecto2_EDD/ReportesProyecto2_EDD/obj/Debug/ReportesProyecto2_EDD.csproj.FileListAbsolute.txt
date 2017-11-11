@@ -1,0 +1,11 @@
+c:\users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\bin\Debug\ReportesProyecto2_EDD.exe.config
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\bin\Debug\ReportesProyecto2_EDD.exe
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\bin\Debug\ReportesProyecto2_EDD.pdb
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.csprojResolveAssemblyReference.cache
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.Properties.Resources.resources
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.csproj.GenerateResource.Cache
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.exe
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.pdb
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.Reportes.resources
+C:\Users\l_enr\documents\visual studio 2013\Projects\ReportesProyecto2_EDD\ReportesProyecto2_EDD\obj\Debug\ReportesProyecto2_EDD.Inicio.resources
