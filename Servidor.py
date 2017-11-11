@@ -81,7 +81,8 @@ class Servidor():
 	def retornarHabitacionesUsuarios():
 		try:
 			nombreUsuario = str(request.form['nombreUsuario'])
-			respuesta = claseArbolB.retornarHabitaciones(nombreUsuario)
+			idUsuario = claseListaDoble.retornarID(nombreUsuario)
+			respuesta = claseArbolB.retornarHabitaciones(idUsuario)
 			return respuesta
 		except: 
 			return "Error en el Servidor"
@@ -130,7 +131,8 @@ class Servidor():
 			nodoHash = NodoH(idReservacion, usuario)
 			claseMatriz.agregarTablaHash(nodoM, nodoHash)
 			
-			claseArbolB.crearNodoInsertar(int(fechaReservacion), usuario, "Se Reservo la Habitacion: " + idReservacion + ", se Gasto " + totalGastado + ", se pago con No. Tarjeta " + numeroTarjeta, anio+numeroMes+dia, fechaSalida, idReservacion)
+			idUsuario = claseListaDoble.retornarID(usuario)
+			claseArbolB.crearNodoInsertar(int(fechaReservacion), usuario, "Se Reservo la Habitacion: " + idReservacion + ", se Gasto " + totalGastado + ", se pago con No. Tarjeta " + numeroTarjeta, anio+numeroMes+dia, fechaSalida, idReservacion, "si", idUsuario)
 			claseListaSimple.actualizarReservacion(idReservacion)
 			
 			nuevoNodo = NodoLista(numeroTarjeta, totalGastado)
@@ -157,7 +159,7 @@ class Servidor():
 	@app.route('/CrearArchivoListaDobleUsuarios') 
 	def CrearArchivoListaDobleUsuarios():
 		try:
-			claseListaDoble.grabarArchivo()
+			claseListaDoble.grabarArchivo2()
 			return "Archivo Lista Doble Creado"
 		except: 
 			return "Error en el Servidor"
@@ -171,6 +173,19 @@ class Servidor():
 			return "Archivo Matriz Creado"
 		except: 
 			return "Error en el Servidor"
+	
+	
+	#------------ ACTUALIZAR EN EL B, LA HABITACION -----------------#
+	@app.route('/ActualizarHReser',methods=['POST']) 
+	def ActualizarHReser():
+		try:
+			idHabitacion = str(request.form['idHabitacion'])
+			claseArbolB.actualizarH(idHabitacion)
+			claseListaSimple.actualizarReservacionDevuelta(idHabitacion)
+			return "Dato Actualizado"
+		except: 
+			return "Error en el Servidor"	
+	
 	
 	
 	#------------ CREAR ARCHIVO RESERVACIONES TABLA HASH -----------------#
@@ -209,6 +224,17 @@ class Servidor():
 		except: 
 			return "Error en el Servidor"	
 		
+	
+	#------------------------- ELIMINAR USUARIO ----------------------------#
+	@app.route('/eliminarUsuario',methods=['POST']) 
+	def eliminarUsuario():
+		try:
+			usuario = str(request.form['usuario'])
+			contrasena = str(request.form['contrasena'])
+			respuesta = claseListaDoble.Eliminar(usuario, contrasena)
+			return respuesta
+		except: 
+			return "Error en el Servidor"	
 		
 	
 	#-------------------------- FIN -------------------------------------#

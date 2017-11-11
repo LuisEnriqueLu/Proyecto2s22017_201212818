@@ -57,7 +57,7 @@ class ListaSimpleCircular:
 		return cadenaDatos	
 	
 	
-	#IMPRIMIR
+	#ACTUALIZAR
 	def actualizarReservacion(self, idHabitacion):
 		aux = self.primero
 		while aux:
@@ -67,6 +67,17 @@ class ListaSimpleCircular:
 			if aux == self.primero:
 				break			
 		return "true"
+	
+	#ACTUALIZAR
+	def actualizarReservacionDevuelta(self, idHabitacion):
+		aux = self.primero
+		while aux:
+			if aux.IdHabitaciones == idHabitacion:
+				aux.reservada = "no"
+			aux = aux.siguiente
+			if aux == self.primero:
+				break			
+		return "true"	
 	
 			
 			

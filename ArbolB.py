@@ -23,8 +23,8 @@ class ArbolB:
 		
 	
 	#CREAR NODO B
-	def crearNodoInsertar(self, idNombre, nombre, descripcion, fecha1, fecha2, habitacion):
-		nodob = NodoB(idNombre, nombre, descripcion, fecha1, fecha2, habitacion)
+	def crearNodoInsertar(self, idNombre, nombre, descripcion, fecha1, fecha2, habitacion, reservada, idUsuario):
+		nodob = NodoB(idNombre, nombre, descripcion, fecha1, fecha2, habitacion, reservada, idUsuario)
 		self.InsertarArbolB(nodob, self.inicio)		
 	
 	
@@ -174,7 +174,10 @@ class ArbolB:
 	def retornarHabitaciones(self, nombreUsuario):	
 		self.todasLasHabitaciones = ""
 		self.RetornarArbolHabitaciones(self.inicio, nombreUsuario)
-		return self.todasLasHabitaciones 
+		if self.todasLasHabitaciones == "":
+			return "nada" 
+		else:
+			return self.todasLasHabitaciones 
 	
 	#Retornar Habitaciones
 	def RetornarArbolHabitaciones(self, raiz, nombreUsuario):
@@ -186,7 +189,7 @@ class ArbolB:
 			if (nodo.cuentas != 0):
 				k=1
 				while k <= nodo.cuentas:
-					if nodo.claves[k - 1].Nombre == nombreUsuario:
+					if nodo.claves[k - 1].idUsuario == nombreUsuario and nodo.claves[k - 1].Reservada == "si":
 						self.todasLasHabitaciones += str(nodo.claves[k - 1].Habitacion) + "@"
 					k+=1
 				i=0
@@ -260,22 +263,38 @@ class ArbolB:
 				while j <= nodo.cuentas:
 					self.grabarArchivo(nodo.ramas[j])
 					j+=1
-					
+		
+	
+	def actualizarH(self, idHabitacion):
+		self.actualizarReservacion(idHabitacion, self.inicio)
+		return "Nombre Actualizado"
 					
 	#MODIFICAR NOMBRE
-	def actualizarNombre(self, idNombre, nuevoNombre):
-		nodoB = NodoB(idNombre, "1", "1", "1", "1")
-		self.actualizarNombreArbolB(nodoB, nuevoNombre, self.inicio)
-		return "Nombre Actualizado"
+	def actualizarReservacion(self, idHabitacion, raiz):
+		nodo = raiz
 	
-	#ACTUALIZAR NOMBRE 
-	def actualizarNombreArbolB(self, nodoB, nuevoNombre, raiz):
-		pos = 0
-		pos = self.existeNodo(nodoB, raiz)
-		if(self.existe2 == True):
-			raiz.claves[pos - 1].Nombre = nuevoNombre			
+		if(nodo == None):
+			variable = "Hola Mundo"
 		else:
-			self.actualizarNombreArbolB(nodoB, nuevoNombre, raiz.ramas[pos])					
+			if (nodo.cuentas != 0):
+				k=1
+				while k <= nodo.cuentas:
+					if nodo.claves[k - 1].Habitacion == idHabitacion:
+						nodo.claves[k - 1].Reservada = "no"
+						break
+					k+=1
+				i=0
+				while i <= nodo.cuentas:
+					if (nodo.ramas[i] != None):
+						if (nodo.ramas[i].cuentas != 0):					
+							hola = "Mundo xD"
+					i+=1
+	
+				j=0
+				while j <= nodo.cuentas:
+					self.actualizarReservacion(idHabitacion, nodo.ramas[j])
+					j+=1	
+						
 	
 	
 	#Eliminar
@@ -290,7 +309,24 @@ class ArbolB:
 			raizLista = raizLista.siguiente		
 
 		claseListaB.Limpiar()
-		return self.inicio				
+		return self.inicio
+	
+	
+	#Modificar
+	def Modificar(self, idModificar, idNuevo):
+		self.InsertarNodosLista(self.inicio)
+		raizLista = claseListaB.retornarLista()
+		self.inicio = Pagina()
+
+		while raizLista != None:
+			if raizLista.index != None :
+				if raizLista.nodoArbolB.idNombre == idModificar:
+					raizLista.nodoArbolB.idNombre = idNuevo
+				self.InsertarArbolB(raizLista.nodoArbolB, self.inicio)
+			raizLista = raizLista.siguiente		
+
+		claseListaB.Limpiar()
+		return self.inicio	
 		
 	
 	#INSERTAR NODOS EN LISTA

@@ -130,7 +130,6 @@ class TablaHash:
 				return False
 		
 		return False
-	
 		
 		
 	
@@ -240,10 +239,25 @@ class TablaHash:
 		print("Archivo Creado")
 		
 	
-					
-				
-			
-			
-			
+	
+	#eliminar
+	def eliminar(self, codigo):		
+		for i in range(0, len(self.tabla)):
+			tabla1 = self.tabla[i]
+			if tabla1 != 0:
+				cod = self.tabla[i].codigo
+				if cod == codigo:
+					self.tabla[i] = 0
+					self.elementos -=1
+					return "True"
+		return "False"
+
+	
+	#Tabla Vacia
+	def tablaVacia(self):
+		for i in range(0, len(self.tabla)):
+			tabla1 = self.tabla[i]
+			if tabla1 != 0:
+				return "False"
 		
-		
+		return "True"
